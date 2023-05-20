@@ -1,5 +1,6 @@
 import {Read_genre_list , Read_genre_by_id} from '@/helper/index'
 import {useEffect, useState} from "react";
+import {URL_image} from '@/constant/index'
 
 export async function getStaticPaths() {
     const genre_list = await Read_genre_list()
@@ -28,6 +29,12 @@ export default function Category({genre} : {genre :{id : number, name : string} 
     },[])
     return <>
         <h3>{JSON.stringify(genre)}</h3>
-        <p>{JSON.stringify(movie)}</p>
+        {/*<p>{JSON.stringify(movie)}</p>*/}
+        {movie.map((el : any)=> <div key={el.id}>
+            <h4>{el.title}</h4>
+            <img src={URL_image(el.poster_path )} alt=""/>
+            <img src={URL_image(el.backdrop_path )} alt=""/>
+            <p>{el.overview}</p>
+        </div>)}
     </>
 }
