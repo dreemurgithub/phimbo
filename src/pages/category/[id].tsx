@@ -28,7 +28,6 @@ export default function Category({genre} : {genre :{id : number, name : string} 
             .then(data=>setMovie(data))
     },[genre.id])
     return <>
-        <h3>{JSON.stringify(genre)}</h3>
         {/*<p>{JSON.stringify(movie)}</p>*/}
         {movie.map((el : any)=> <div key={el.id}>
             <h4>{el.title}</h4>
