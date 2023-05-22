@@ -2,7 +2,7 @@ import Styles from './dropdown.module.css'
 import {useEffect, useState} from "react";
 import Link from 'next/link'
 
-export default function Dropdown(){
+export default function Dropdown0(){
     const [nav_list, setNav] = useState<Array<any>>([])
     useEffect(() => {
         fetch('/api/navbar')
@@ -13,6 +13,18 @@ export default function Dropdown(){
         {nav_list.map((el:any)=><li key={el.id} ><Link href={`/category/${el.id}`}>{el.name} - Link 1</Link> </li>)}
     </ul>
 }
+export function Dropdown1(){
+    const [nav_list, setNav] = useState<Array<any>>([])
+    useEffect(() => {
+        fetch('/api/navbar')
+            .then(res => res.json())
+            .then(data => setNav(data))
+    }, [])
+    return <ul className={Styles.dropdown}>
+        {nav_list.map((el:any)=><li key={el.id} ><Link href={`/category/${el.id}`}>{el.name} - 2 - Link</Link> </li>)}
+    </ul>
+}
+
 export function Dropdown2(){
     const [nav_list, setNav] = useState<Array<any>>([])
     useEffect(() => {
@@ -21,7 +33,7 @@ export function Dropdown2(){
             .then(data => setNav(data))
     }, [])
     return <ul className={Styles.dropdown}>
-        {nav_list.map((el:any)=><li key={el.id} ><Link href={`/category/${el.id}`}>{el.name} - Link 2</Link> </li>)}
+        {nav_list.map((el:any)=><li key={el.id} ><Link href={`/category/${el.id}`}>{el.name} - Link -3</Link> </li>)}
     </ul>
 }
 
@@ -33,18 +45,6 @@ export function Dropdown3(){
             .then(data => setNav(data))
     }, [])
     return <ul className={Styles.dropdown}>
-        {nav_list.map((el:any)=><li key={el.id} ><Link href={`/category/${el.id}`}>{el.name} - Link 3</Link> </li>)}
-    </ul>
-}
-
-export function Dropdown4(){
-    const [nav_list, setNav] = useState<Array<any>>([])
-    useEffect(() => {
-        fetch('/api/navbar')
-            .then(res => res.json())
-            .then(data => setNav(data))
-    }, [])
-    return <ul className={Styles.dropdown}>
-        {nav_list.map((el:any)=><li key={el.id} ><Link href={`/category/${el.id}`}>{el.name} - Link 4</Link> </li>)}
+        {nav_list.map((el:any)=><li key={el.id} ><Link href={`/category/${el.id}`}> Link 4 -{el.name}</Link> </li>)}
     </ul>
 }
