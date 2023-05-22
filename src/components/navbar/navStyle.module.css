@@ -19,8 +19,8 @@
     background-color: green;
 }
 
-.nav_item {
-
+.nav_item:hover {
+    cursor: pointer;
 }
 .nav_item >div>svg {
     position: relative;
