@@ -1,0 +1,10 @@
+.dropdown {
+    background-color: aqua;
+    width: 33em;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    list-style: none;
+}
+.dropdown > * {
+    padding-top: 1em;
+}

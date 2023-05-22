@@ -1,33 +1,76 @@
 import {useState, useEffect} from "react";
 import Link from 'next/link'
 import Styles from './navStyle.module.css'
+import Dropdown, {Dropdown2, Dropdown3 ,Dropdown4} from "@/components/navbar/dropdown";
 
 export default function Navbar() {
-    const [nav_list, setNav] = useState<Array<any>>([])
-    useEffect(() => {
-        fetch('/api/navbar')
-            .then(res => res.json())
-            .then(data => setNav(data))
-    }, [])
+    const [list_display,set_display] = useState(['none','none','none','none'])
+    function display_dropdown(dropdown_po: number){
+        const list_new = ['none','none','none','none']
+        list_new[dropdown_po] = 'block'
+        set_display(list_new)
+    }
     return <nav className={Styles.nav_all}>
         <div>
             <div className={Styles.nav_icon}>
                 <img src="https://phim1080.in/assets/img/phim1080.png" alt=""/>
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                      className="bi bi-list" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd"
+                    <path fillRule="evenodd"
                           d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
                 </svg>
             </div>
         </div>
         <div>
             <ul className={Styles.navbar_display}>
-                <li className={Styles.nav_item}><Link href={'/'}>Thể Loại</Link></li>
-                <li className={Styles.nav_item}><Link href={'/'}>Quốc Gia</Link></li>
-                <li className={Styles.nav_item}><Link href={'/'}>Phim Lẻ</Link></li>
-                <li className={Styles.nav_item}><Link href={'/'}>Phim Bộ</Link></li>
-                <li className={Styles.nav_item}><Link href={'/'}>Chiếu Rạp</Link></li>
-                <li className={Styles.nav_item}><Link href={'/'}>Sắp Chiếu</Link></li>
+                <div className={Styles.nav_item} onMouseEnter={()=>display_dropdown(0)} onMouseLeave={()=>display_dropdown(5)}><div>
+                    <span>Thể Loại</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                         className="bi bi-arrow-down" viewBox="0 0 16 16">
+                        <path fillRule="evenodd"
+                              d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
+                    </svg>
+                </div></div>
+                <div className={Styles.nav_item} onMouseEnter={()=>display_dropdown(1)} onMouseLeave={()=>display_dropdown(5)}><div>
+
+                    Quốc Gia
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                         className="bi bi-arrow-down" viewBox="0 0 16 16">
+                        <path fillRule="evenodd"
+                              d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
+                    </svg>
+
+                </div></div>
+                <div className={Styles.nav_item} onMouseEnter={()=>display_dropdown(2)} onMouseLeave={()=>display_dropdown(5)}><div>
+
+                    Phim Lẻ
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                         className="bi bi-arrow-down" viewBox="0 0 16 16">
+                        <path fillRule="evenodd"
+                              d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
+                    </svg>u
+                </div></div>
+                <div className={Styles.nav_item} onMouseEnter={()=>display_dropdown(3)} onMouseLeave={()=>display_dropdown(5)}><div >Phim Bộ
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                         className="bi bi-arrow-down" viewBox="0 0 16 16">
+                        <path fillRule="evenodd"
+                              d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
+                    </svg>
+                </div></div>
+                <li ><Link href={'/'}>Chiếu Rạp</Link></li>
+                <li ><Link href={'/'}>Sắp Chiếu</Link></li>
+                <div style={ { display:list_display[0] } }>
+                    <Dropdown />
+                </div>
+                <div style={ { display:list_display[1] } }>
+                    <Dropdown2 />
+                </div>
+                <div style={ { display:list_display[2] } }>
+                    <Dropdown3/>
+                </div>
+                <div style={ { display:list_display[3] } }>
+                    <Dropdown4/>
+                </div>
                 {/*{nav_list.map((el:any)=><li key={el.id} className={Styles.nav_item}><Link href={`/category/${el.id}`}>{el.name}</Link> </li>)}*/}
             </ul>
         </div>
@@ -54,7 +97,7 @@ export default function Navbar() {
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                          className="bi bi-person-circle" viewBox="0 0 16 16">
                         <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
-                        <path fill-rule="evenodd"
+                        <path fillRule="evenodd"
                               d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
                     </svg>
                 </div>

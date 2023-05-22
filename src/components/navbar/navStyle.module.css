@@ -22,7 +22,11 @@
 .nav_item {
 
 }
-
+.nav_item >div>svg {
+    position: relative;
+    top: 3px;
+    left: 5px;
+}
 
 .nav_icon {
     padding-top: 1em;
@@ -65,3 +69,4 @@
     position: relative;
     right: 1em;
 }
+
