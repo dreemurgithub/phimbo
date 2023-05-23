@@ -1,7 +1,7 @@
 
 @media (min-width: 1024px) {
     .dropdown {
-        background-color: aqua;
+        background-color: #536872;
         width: 33em;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
@@ -13,19 +13,30 @@
     .dropdown > * {
         padding-top: 1em;
     }
+    .dropdown >* > a {
+        color: white;
+    }
 }
 @media (max-width: 1023px) {
     .dropdown {
-        background-color: aqua;
-        width: 33em;
+        width: 20em;
         display: grid;
         grid-template-columns: 1fr 1fr;
         list-style: none;
         position: relative;
-        left : 100px;
+        left : -2.5em;
+        gap: 0.3em;
+        /*overflow-y: auto;*/
         /*margin: 0 auto;*/
+
     }
+
     .dropdown > * {
-        padding-top: 1em;
+        padding-top: 0.5em;
+        /*width: 1em;*/
+    }
+    .dropdown > * >a{
+        color: #0285b5;
+        font-weight: bolder;
     }
 }

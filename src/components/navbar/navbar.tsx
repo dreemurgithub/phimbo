@@ -1,4 +1,6 @@
 import {useState, useEffect} from "react";
+import * as React from "react";
+
 import Link from 'next/link'
 import Styles from './navStyle.module.css'
 import Dropdown0, {Dropdown2, Dropdown3, Dropdown1} from "@/components/navbar/dropdown";
@@ -6,11 +8,12 @@ import Dropdown0, {Dropdown2, Dropdown3, Dropdown1} from "@/components/navbar/dr
 export default function Navbar() {
     const [list_display, set_display] = useState(['none', 'none', 'none', 'none'])
     const [list_display_mobile, set_display_mopbile] = useState(['none', 'none', 'none', 'none'])
+    const [Sidebar_state, setSidebar] = useState('none')
 
     function display_dropdown(dropdown_po: number) {
         const list_new = ['none', 'none', 'none', 'none']
         list_new[dropdown_po] = 'block'
-        if (window.screen.width > 1023) {
+        if (window.screen.width > 1023&&window.innerWidth>1023) {
             set_display(list_new)
             if (dropdown_po > 3) set_display(['none', 'none', 'none', 'none'])
         }
@@ -18,22 +21,46 @@ export default function Navbar() {
     }
 
     function display_dropdown_mobile(dropdown_po: number) {
-        const list_new = list_display_mobile
-        if(list_new[dropdown_po]==='none') list_new[dropdown_po] = 'grid'
-        else list_new[dropdown_po] ='none'
-        if (window.screen.width <= 1023) {
-            set_display_mopbile(list_new.map(el=>el))
+        const list_new = list_display_mobile.map(el=>el)
+        if (list_new[dropdown_po] === 'none') list_new[dropdown_po] = 'grid'
+        else list_new[dropdown_po] = 'none'
+        if (window.screen.width <= 1023 || window.innerWidth<=1023) {
+            set_display_mopbile(list_new)
         }
     }
 
+    function display_sidebar() {
+        if (Sidebar_state === 'none') setSidebar('grid')
+        else setSidebar('none')
+    }
+
+    // must create a re render method on screen change
+    useEffect(() => {
+        if (window.innerWidth <= 1023 ) setSidebar('none')
+        else setSidebar('grid')
+        window.addEventListener('resize', () => {
+            if (window.innerWidth <= 1023) {
+                setSidebar('none')
+                set_display_mopbile(['none', 'none', 'none', 'none'])
+            } else {
+                setSidebar('grid')
+                set_display(['none', 'none', 'none', 'none'])
+            }
+
+        })
+
+
+    }, [])
+
     return <>
 
-        <nav className={Styles.nav_all}>
+        <nav className={Styles.nav_all} onMouseLeave={() => display_dropdown(5)}>
+            {/*will hide dropdown pc on mouse leave navbar*/}
             <div>
                 <div className={Styles.nav_icon}>
-                    <img src="https://phim1080.in/assets/img/phim1080.png" alt=""/>
+                    <img src="https://phim1080.in/assets/img/phim1080.png" alt="" onClick={()=>window.location.href='/' }/>
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                         className="bi bi-list" viewBox="0 0 16 16">
+                         className="bi bi-list" viewBox="0 0 16 16" onClick={display_sidebar}>
                         <path fillRule="evenodd"
                               d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
                     </svg>
@@ -54,18 +81,23 @@ export default function Navbar() {
 
                 </div>
             </div>
-            <div className={Styles.sidebar}>
+            <div className={Styles.sidebar} style={{display: Sidebar_state}}>
+                <div className={Styles.sidebar_mobile}>
+                    <img src="https://phim1080.in/assets/img/logo.svg" alt="" onClick={()=>window.location.href='/' }/>
+                    <span onClick={display_sidebar}>X</span>
+                </div>
                 <div className={Styles.side_list}>
                     <ul className={Styles.navbar_display}>
                         <div className={Styles.nav_item} onMouseEnter={() => display_dropdown(0)}
-                             onMouseLeave={() => display_dropdown(5)} onClick={()=>display_dropdown_mobile(0)}>
+                             onClick={() => display_dropdown_mobile(0)}>
                             <div>
-                                <span>Thể Loại</span>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                      className="bi bi-arrow-down" viewBox="0 0 16 16">
                                     <path fillRule="evenodd"
                                           d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
                                 </svg>
+                                <span>Thể Loại</span>
+
                                 <div style={{display: list_display_mobile[0]}}>
                                     <Dropdown0/>
                                 </div>
@@ -74,30 +106,30 @@ export default function Navbar() {
                             </div>
                         </div>
                         <div className={Styles.nav_item} onMouseEnter={() => display_dropdown(1)}
-                             onMouseLeave={() => display_dropdown(5)} onClick={()=>display_dropdown_mobile(1)}>
+                             onClick={() => display_dropdown_mobile(1)}>
                             <div>
-
-                                Quốc Gia
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                      className="bi bi-arrow-down" viewBox="0 0 16 16">
                                     <path fillRule="evenodd"
                                           d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
                                 </svg>
+                                <span>Quốc Gia</span>
+
                                 <div style={{display: list_display_mobile[1]}}>
                                     <Dropdown1/>
                                 </div>
                             </div>
                         </div>
                         <div className={Styles.nav_item} onMouseEnter={() => display_dropdown(2)}
-                             onMouseLeave={() => display_dropdown(5)} onClick={()=>display_dropdown_mobile(2)}>
+                             onClick={() => display_dropdown_mobile(2)}>
                             <div>
-
-                                Phim Lẻ
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                      className="bi bi-arrow-down" viewBox="0 0 16 16">
                                     <path fillRule="evenodd"
                                           d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
                                 </svg>
+                                <span>Phim Lẻ</span>
+
                                 <div style={{display: list_display_mobile[2]}}>
                                     <Dropdown2/>
                                 </div>
@@ -105,20 +137,22 @@ export default function Navbar() {
                             </div>
                         </div>
                         <div className={Styles.nav_item} onMouseEnter={() => display_dropdown(3)}
-                             onMouseLeave={() => display_dropdown(5)} onClick={()=>display_dropdown_mobile(3)}>
-                            <div>Phim Bộ
+                             onClick={() => display_dropdown_mobile(3)}>
+                            <div>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                      className="bi bi-arrow-down" viewBox="0 0 16 16">
                                     <path fillRule="evenodd"
                                           d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
                                 </svg>
+                                <span>Phim Bộ</span>
+
                                 <div style={{display: list_display_mobile[3]}}>
                                     <Dropdown3/>
                                 </div>
                             </div>
                         </div>
-                        <li><Link href={'/'}>Chiếu Rạp</Link></li>
-                        <li><Link href={'/'}>Sắp Chiếu</Link></li>
+                        <li><Link href={'/'} style={ {textDecoration:'none',color:'white'} }>Chiếu Rạp</Link></li>
+                        <li><Link href={'/'} style={ {textDecoration:'none',color:'white'} }>Sắp Chiếu</Link></li>
 
                     </ul>
                 </div>
@@ -126,7 +160,7 @@ export default function Navbar() {
                     <div className={Styles.nav_search}>
                         <span></span>
                         <input type="text" placeholder={'Tìm kiếm'}/>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white"
                              className="bi bi-search" viewBox="0 0 16 16">
                             <path
                                 d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
@@ -154,11 +188,9 @@ export default function Navbar() {
             </div>
         </nav>
 
-
+        <div className={Styles.side_exit} style={{display:Sidebar_state}} onClick={display_sidebar}></div>
     </>
 
 }
 
-function DropDown_display() {
 
-}

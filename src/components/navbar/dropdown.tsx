@@ -10,7 +10,7 @@ export default function Dropdown0(){
             .then(data => setNav(data))
     }, [])
     return <ul className={Styles.dropdown}>
-        {nav_list.map((el:any)=><li key={el.id} ><Link href={`/category/${el.id}`}>{el.name} - Link 1</Link> </li>)}
+        {nav_list.map((el:any)=><li key={el.id} ><Link href={`/category/${el.id}`}>{el.name}-0</Link> </li>)}
     </ul>
 }
 export function Dropdown1(){
@@ -21,7 +21,7 @@ export function Dropdown1(){
             .then(data => setNav(data))
     }, [])
     return <ul className={Styles.dropdown}>
-        {nav_list.map((el:any)=><li key={el.id} ><Link href={`/category/${el.id}`}>{el.name} - 2 - Link</Link> </li>)}
+        {nav_list.map((el:any)=><li key={el.id} ><Link href={`/category/${el.id}`}>{el.name}++2</Link> </li>)}
     </ul>
 }
 
@@ -33,7 +33,7 @@ export function Dropdown2(){
             .then(data => setNav(data))
     }, [])
     return <ul className={Styles.dropdown}>
-        {nav_list.map((el:any)=><li key={el.id} ><Link href={`/category/${el.id}`}>{el.name} - Link -3</Link> </li>)}
+        {nav_list.map((el:any)=><li key={el.id} ><Link href={`/category/${el.id}`}>3++{el.name}</Link> </li>)}
     </ul>
 }
 
@@ -45,6 +45,6 @@ export function Dropdown3(){
             .then(data => setNav(data))
     }, [])
     return <ul className={Styles.dropdown}>
-        {nav_list.map((el:any)=><li key={el.id} ><Link href={`/category/${el.id}`}> Link 4 -{el.name}</Link> </li>)}
+        {nav_list.map((el:any)=><li key={el.id} ><Link href={`/category/${el.id}`}>4-{el.name}</Link> </li>)}
     </ul>
 }
