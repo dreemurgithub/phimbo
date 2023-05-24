@@ -4,6 +4,10 @@
     gap: 1em;
     background-color: green;
     cursor: pointer;
+    margin-top: 8em;
+}
+.container > div {
+    margin-top: -5.5em;
 }
 .container > div > img {
     width: 100%;

@@ -1,12 +1,28 @@
+.nav_wrapper {
+    /*use this to make long background padding color*/
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: #5e5656;
+    padding-left: 10vw;
+    margin-left: -10vw;
+    padding-right: 1em;
+    margin-right: -1em;
+}
 .nav_all {
     color: white;
     position: sticky;
-    top: 1em;
+    top: 0;
     z-index: 100;
+    /*background-color: #5e5656;*/
+    padding-bottom: 1em;
 
+    /**/
 }
 
 .nav_branch {
+    padding-left: 2em;
+    background-color: #5e5656;
 }
 .nav_item {
     position: relative;
@@ -26,7 +42,7 @@
 .nav_icon {
     padding-top: 1em;
     /*width: 150px;*/
-
+    margin-left: 2em;
 
 }
 .nav_icon > img {
@@ -95,7 +111,8 @@
         width: 1000px;
         display: grid;
         grid-template-columns: 120px 1fr 70px;
-        padding-bottom: -2em;
+        /*padding-bottom: -2em;*/
+
     }
 
     .sidebar {
@@ -123,7 +140,7 @@
         width: 80%;
         display: grid;
         grid-template-columns: 3fr 1fr;
-        padding-bottom: -2em;
+        /*padding-bottom: -2em;*/
         /*background-color: #3c2f2f;*/
     }
     .navbar_display {

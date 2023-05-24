@@ -1,0 +1,33 @@
+.wrapper_grid {
+    display: grid;
+    background-color: green;
+}
+
+.video {
+    grid-area: video;
+    width: 100%;
+}
+.description {
+    grid-area: description;
+
+}
+
+.sideRight {
+    grid-area: sideRight;
+
+}
+
+.bottom {
+    grid-area: bottom_area;
+
+}
+
+@media (min-width: 1024px) {
+    .wrapper_grid {
+        grid-template-areas: 'video sideRight' 'description sideRight' 'bottom_area bottom_area' ;
+        width: clamp(750px,80%,1024px);
+        margin: 0 auto;
+        grid-template-columns: 3fr 2fr;
+        gap: 1em;
+    }
+}

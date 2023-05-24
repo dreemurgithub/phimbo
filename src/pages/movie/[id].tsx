@@ -3,6 +3,7 @@ import {URL_image} from '@/constant/index'
 import Link from 'next/link'
 import Bottom from "@/components/similar_movie/bottom";
 import SideRight from "@/components/similar_movie/sideRight";
+import Styles from './movie.module.css'
 export async function getStaticPaths() {
     const movie_list = await Help_read_file()
     const list: Array<any> = []
@@ -102,27 +103,32 @@ export default function Movie({movie}: any) {
             "name": "Western"
         }
     ]
-    const genre_obj : any = {}
-    genre.forEach((el : {id : number ,name : string} ) => genre_obj[el.id.toString()] = el.name)
+    const genre_obj: any = {}
+    genre.forEach((el: { id: number, name: string }) => genre_obj[el.id.toString()] = el.name)
 
-    return <>
-        <div>
+    return (
+        <div className={Styles.wrapper_grid}>
+            <img src={URL_image(movie.backdrop_path)} alt="" className={Styles.video}/>
+            <div className={Styles.description}>
+                <h3>{movie.title}</h3>
+                <p>Điểm bình chọn: {movie.vote_average}</p>
+                <p>Số lượng bình chọn: {movie.vote_count}</p>
+                <p>Điểm phổ biến: {movie.popularity}</p>
+                <p>Ngày phát hành: {movie.release_date}</p>
+                <ul>
+                    <li>Thể loại</li>
+                    {movie.genre_ids.map((el: number) => <li key={el}>
+                        <Link href={`/category/${el}`} target={'_blank'}>{genre_obj[el.toString()]}</Link>
+                    </li>)}
+                </ul>
+                <p>{movie.overview}</p>
+            </div>
+            <div className={Styles.bottom}>
+                <Bottom/>
+            </div>
+            <div className={Styles.sideRight}>
+                <SideRight/>
 
-            <img src={URL_image(movie.backdrop_path)} alt=""/>
-            <h3>{movie.title}</h3>
-            <p>Điểm bình chọn: {movie.vote_average}</p>
-            <p>Số lượng bình chọn: {movie.vote_count}</p>
-            <p>Điểm phổ biến: {movie.popularity}</p>
-            <p>Ngày phát hành: {movie.release_date}</p>
-            <ul>
-                <li>Thể loại</li>
-                {movie.genre_ids.map((el: number) => <li key={el}>
-                    <Link href={`/category/${el}`} target={'_blank'}>{genre_obj[el.toString()]}</Link>
-                </li>)}
-            </ul>
-            <p>{movie.overview}</p>
-        </div>
-        <Bottom />
-        <SideRight />
-    </>
+            </div>
+        </div>)
 }

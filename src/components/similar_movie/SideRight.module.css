@@ -1,0 +1,22 @@
+.sideRight {
+    display: grid;
+}
+.img {
+    max-width: 100%;
+}
+.card {
+
+}
+
+@media (min-width: 768px) {
+    .sideRight {
+        grid-template-columns: 1fr;
+        /*width: 10em;*/
+
+    }
+    .card {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.2em;
+    }
+}
