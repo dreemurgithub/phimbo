@@ -1,4 +1,4 @@
-// bottom have 5 card on wide screem > 1023px, 4 card from 1034px to 768px(side Right go below here) , 767px and below have 6 card with 2 row(639px-767px) or 3 row 638px and below
+// bottom have 5 card on wide screem > 1023px, 4 card from 1023px to 768px(side Right go below here) , 767px and below have 6 card with 2 row(639px-767px) or 3 row 638px and below
 import {URL_image} from '@/constant/index'
 import Styles from './bottom.module.css';
 import Link from 'next/link';
@@ -17,18 +17,20 @@ export default function Bottom() {
     return <>
         <div className={Styles.bottom}>
             {item.map((el: { title: string, img: string, id: number }) => <div key={el.img}>
-                <Link href={`/movie/${el.id}`} target={'_blank'}>
-                    <img src={URL_image(el.img)} alt="" className={Styles.img}/>
-                </Link>
-                <Link href={`/movie/${el.id}`} target={'_blank'}>
-
-                    <div>
-                        <h4>{el.title}</h4>
-                        <p>120 Phút</p>
-                        <p>20.5k Lượt xem</p>
-                    </div>
-                </Link>
-
+                    <span>Vietsub</span>
+                    <Link href={`/movie/${el.id}`} target={'_blank'}>
+                        <img src={URL_image(el.img)} alt="" className={Styles.img}/>
+                    </Link>
+                    <Link href={`/movie/${el.id}`} target={'_blank'}>
+                        <div className={Styles.information_poster}>
+                            <span>FHD</span>
+                            <p>{el.title}</p>
+                            <div>
+                                <span>120 Phút</span>
+                                <span>20.5k Lượt xem</span>
+                            </div>
+                        </div>
+                    </Link>
                 </div>
             )}
         </div>

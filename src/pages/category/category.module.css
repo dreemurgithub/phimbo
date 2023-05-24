@@ -15,11 +15,13 @@
     z-index: 3;
 }
 .information_poster {
-    top: -5.5em;
-    grid-template-rows: 1em 3.3em 1em;
+    /*top: -5.5em;*/
+    /*grid-template-rows: 1em 3.3em 1em;*/
 }
 .information_poster {
     position: relative;
+    top: -5.5em;
+    grid-template-rows: 1em 3.3em 1em;
     color: white;
     font-weight: bolder;
     display: grid;
