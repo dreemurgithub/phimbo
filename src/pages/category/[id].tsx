@@ -60,8 +60,8 @@ export default function Category({genre}: { genre: { id: number, name: string } 
 
             {movie.map((el: any) => <div key={el.id} >
                 <span>Vietsub</span>
-                <img src={URL_image(el.poster_path)} alt="" onClick={()=>window.location.href='/' }/>
-                <div className={Styles.information_poster} onClick={()=>window.location.href='/' }>
+                <img src={URL_image(el.poster_path)} alt="" onClick={()=>window.location.href=`/movie/${el.id}` }/>
+                <div className={Styles.information_poster} onClick={()=>window.location.href=`/movie/${el.id}` }>
                     <span>FHD</span>
                     <p>{el.title ? el.title : 'Error: No title'}</p>
                     <div>

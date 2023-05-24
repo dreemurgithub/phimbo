@@ -5,17 +5,22 @@
     z-index: 100;
 
 }
+
 .nav_branch {
 }
-
+.nav_item {
+    position: relative;
+    top: -2.5px;
+}
 
 .nav_item:hover {
     cursor: pointer;
+
 }
 .nav_item >div>svg {
     position: relative;
     top: 3px;
-    left: -5px;
+    left: -2px;
 }
 
 .nav_icon {

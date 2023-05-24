@@ -39,12 +39,17 @@ export default function Navbar() {
         if (window.innerWidth <= 1023 ) setSidebar('none')
         else setSidebar('grid')
         window.addEventListener('resize', () => {
-            if (window.innerWidth <= 1023) {
+            // alert('onresize')
+
+            if (window.innerWidth <= 1023 || window.screen.width<=1023  ) {
                 setSidebar('none')
+                set_display(['none', 'none', 'none', 'none'])
                 set_display_mopbile(['none', 'none', 'none', 'none'])
             } else {
                 setSidebar('grid')
                 set_display(['none', 'none', 'none', 'none'])
+                set_display_mopbile(['none', 'none', 'none', 'none'])
+
             }
 
         })

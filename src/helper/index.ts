@@ -3,7 +3,7 @@ import path from 'path'
 export async function Help_read_file(){
     const file_path = path.join(process.cwd(),'file','movie.json')
     const data_string = await fs.readFile(file_path,'utf-8')
-    return data_string
+    return JSON.parse(data_string)
 }
 
 export async function Read_genre_list(){
@@ -22,11 +22,20 @@ export async function Read_genre_by_id(id : string ){
     }
 //     not neccessary
 }
-export async function Read_movie_id(id: number){
+export async function Read_movie_genre_id(id: number){
     const file_path = path.join(process.cwd(),'file','movie.json')
     const data_string = await fs.readFile(file_path,'utf-8')
     const data_obj = JSON.parse(data_string)
     const data_obj_filter = data_obj.filter((el:any)=>el.genre_ids.includes(id))
     return data_obj_filter
 //     work!
+}
+export async function Read_movie_id(id : number){
+    const file_path = path.join(process.cwd(),'file','movie.json')
+    const data_string = await fs.readFile(file_path,'utf-8')
+    const data_obj = JSON.parse(data_string)
+    const data_obj_filter = data_obj.filter((el:any)=>el.id===id)
+    return data_obj_filter[0]
+//     work!
+
 }
