@@ -11,23 +11,25 @@ import Update from "@/components/home/update";
 import {useEffect, useState} from "react";
 
 export default function Home() {
-  const [data_list,setdata_list] = useState([])
+  const [data_list,setdata_list] = useState({})
   useEffect(()=>{
     fetch('/api/home')
         .then(res=>res.json())
         .then(data=>setdata_list(data))
   },[])
   return <>
-    <p>{JSON.stringify(data_list)}</p>
-    <Recommend />
-    <Anime />
-    <Chart />
-    <New_single />
-    <New_Series />
-    <Single />
-    <Soon />
-    <Today />
-    <Trailer />
-    <Update />
+    {/*<p>{JSON.stringify(data_list)}</p>*/}
+    <div style={{margin:'0 auto'}}>
+      <Recommend/>
+      <Update/>
+      <Anime/>
+      <Single/>
+      <New_Series/>
+      <New_single/>
+      <Chart/>
+      <Trailer/>
+      <Soon/>
+      <Today/>
+    </div>
   </>
 }

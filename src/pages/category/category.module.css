@@ -2,7 +2,6 @@
     margin: 0 auto;
     display: grid;
     gap: 1em;
-    background-color: green;
     cursor: pointer;
     margin-top: 8em;
 }

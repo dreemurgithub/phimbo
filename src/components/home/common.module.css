@@ -1,0 +1,283 @@
+/* container card pic on update+recommend - start   */
+
+.container_card_pic ,.container_card_anime_trailer,.container_card_list {
+    margin: 0 auto;
+    display: grid;
+    /*gap: 1em;*/
+    cursor: pointer;
+    margin-top: 8em;
+}
+.container_card_pic > div, .container_card_list>div , .container_card_anime_trailer>div {
+    margin-top: -7em;
+}
+.container_card_pic > div > img , .container_card_anime_trailer > div > img , .container_card_list > div > img {
+    width: 100%;
+    height: 10em;
+    z-index: 3;
+}
+
+.container_card_pic > div > span,.container_card_anime_trailer > div > span, .container_card_list > div > span {
+    position: relative;
+    top: 1.5em;
+    left: 1em;
+    background-color: white;
+    color: #0285b5;
+    font-weight: bolder;
+    border-radius: 10px;
+    padding: 0.2em;
+    opacity: 100%;
+    /*    the vietsub span*/
+}
+/* container card pic on update+recommend - end   */
+
+
+
+
+.information_poster {
+    position: relative;
+    top: -5.5em;
+    grid-template-rows: 1em 3.3em 1em;
+    color: white;
+    font-weight: bolder;
+    display: grid;
+    background-image: linear-gradient(180deg, hsla(0, 0%, 100%, 0), rgba(0, 0, 0, .39) 34%, #000 87%) /*copy this from https://phim1080.in/phim-chieu-rap*/
+}
+.information_poster > span {
+    text-align: center;
+    width: 3em;
+    position: relative;
+    top: 1em;
+    background-color: red;
+
+    /*the FHD, what ever*/
+}
+.information_poster > div {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.7em;
+    padding-left: 0.5em;
+    padding-right: 1em;
+}
+
+.information_poster > p {
+    padding: 0.2em;
+    overflow: hidden;
+}
+@media (min-width: 800px) {
+    .container_card_pic {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        width: 80vw;
+
+    }
+    .container_card_pic >div:first-child {
+        grid-row-start: 1;
+        grid-row-end: 3;
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+    .container_card_pic > div:first-child  > img{
+        height: 20em;
+    }
+    .container_card_list > div > img {
+        width: 100%;
+        object-fit: fill;
+    }
+
+}
+@media (max-width: 799px) and (min-width: 768px ){
+    .container_card_pic {
+        grid-template-columns: 1fr 1fr 1fr;
+        width: 100vw;
+    }
+    .container_card_pic >div:first-child {
+        grid-row-start: 1;
+        grid-row-end: 3;
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+    .container_card_pic > div:first-child  > img{
+        height: 20em;
+    }
+
+}
+@media (max-width: 767px) and (min-width: 640px ){
+    .container_card_pic {
+        grid-template-columns: 1fr 1fr 1fr;
+        width: 100vw;
+    }
+    .container_card_pic > div:first-child  {
+        grid-row-start: 1;
+        grid-row-end: 2;
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+}
+@media (max-width: 639px){
+    .container_card_pic {
+        grid-template-columns: 1fr 1fr;
+        width: 100vw;
+    }
+}
+
+/* container anime on Start + trailer - start   */
+.container_card_anime_trailer {
+    margin: 0 auto;
+    display: grid;
+    /*gap: 1em;*/
+    cursor: pointer;
+    margin-top: 8em;
+}
+.container_card_anime_trailer > div {
+    margin-top: -7em;
+}
+.container_card_anime_trailer > div > img {
+    width: 100%;
+    height: 10em;
+    z-index: 3;
+}
+
+.container_card_anime_trailer > div > span {
+    position: relative;
+    top: 1.5em;
+    left: 1em;
+    background-color: white;
+    color: #0285b5;
+    font-weight: bolder;
+    border-radius: 10px;
+    padding: 0.2em;
+    opacity: 100%;
+    /*    the vietsub span*/
+}
+
+@media (min-width: 800px) {
+    .container_card_anime_trailer {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        width: 80vw;
+
+    }
+    .container_card_anime_trailer >div:first-child {
+        grid-row-start: 1;
+        grid-row-end: 3;
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+    .container_card_anime_trailer > div:first-child  > img{
+        height: 20em;
+    }
+
+
+}
+@media (max-width: 799px) and (min-width: 768px ){
+    .container_card_anime_trailer {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        width: 100vw;
+    }
+    .container_card_anime_trailer >div:first-child {
+        grid-row-start: 1;
+        grid-row-end: 3;
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+    .container_card_anime_trailer > div:first-child  > img{
+        height: 20em;
+    }
+
+}
+@media (max-width: 767px) and (min-width: 640px ){
+    .container_card_anime_trailer {
+        grid-template-columns: 1fr 1fr 1fr ;
+        width: 100vw;
+    }
+    .container_card_anime_trailer > div:first-child  {
+        grid-row-start: 1;
+        grid-row-end: 3;
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+    .container_card_anime_trailer > div:nth-child(4) {
+        grid-row-start: 3;
+        grid-row-end: 5;
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+    .container_card_anime_trailer > div:first-child  > img,.container_card_anime_trailer > div:nth-child(4)>img{
+        height: 20em;
+    }
+}
+@media (max-width: 639px){
+    .container_card_anime_trailer {
+        grid-template-columns: 1fr 1fr;
+        width: 100vw;
+    }
+}
+
+
+/* container anime on Start + trailer - end   */
+
+
+
+/* container anime on soon + today + new single + new series  - start   */
+
+@media (min-width: 800px) {
+    .container_card_list {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        width: 80vw;
+        background-color: aqua;
+    }
+    /*.container_card_list >div:first-child {*/
+    /*    grid-row-start: 1;*/
+    /*    grid-row-end: 3;*/
+    /*    grid-column-start: 1;*/
+    /*    grid-column-end: 3;*/
+    /*}*/
+    .container_card_list > div  > img{
+        height: 20em;
+    }
+
+
+}
+@media (max-width: 799px) and (min-width: 768px ){
+    .container_card_list {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        width: 100vw;
+    }
+    .container_card_list >div:first-child {
+        grid-row-start: 1;
+        grid-row-end: 3;
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+    .container_card_list > div:first-child  > img{
+        height: 20em;
+    }
+
+}
+@media (max-width: 767px) and (min-width: 640px ){
+    .container_card_list {
+        grid-template-columns: 1fr 1fr 1fr ;
+        width: 100vw;
+    }
+    .container_card_list > div:first-child  {
+        grid-row-start: 1;
+        grid-row-end: 3;
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+    .container_card_list > div:nth-child(4) {
+        grid-row-start: 3;
+        grid-row-end: 5;
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+    /*.container_card_list > div:first-child  > img,.container_card_list > div:nth-child(4)>img{*/
+    /*    height: 20em;*/
+    /*}*/
+}
+@media (max-width: 639px){
+    .container_card_list {
+        grid-template-columns: 1fr 1fr;
+        width: 100vw;
+    }
+}
+
+/* container anime on soon + today + new single + new series - end   */

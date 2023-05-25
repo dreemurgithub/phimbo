@@ -1,8 +1,6 @@
 .wrapper_grid {
     display: grid;
-    background-color: green;
     margin: 0 auto;
-
 }
 
 .video {
