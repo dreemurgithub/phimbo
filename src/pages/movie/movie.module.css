@@ -1,6 +1,8 @@
 .wrapper_grid {
     display: grid;
     background-color: green;
+    margin: 0 auto;
+
 }
 
 .video {
@@ -26,7 +28,6 @@
     .wrapper_grid {
         grid-template-areas: 'video sideRight' 'description sideRight' 'bottom_area bottom_area' ;
         width: clamp(750px,80%,1024px);
-        margin: 0 auto;
         grid-template-columns: 3fr 2fr;
         gap: 1em;
     }
@@ -35,28 +36,22 @@
 @media (min-width: 768px) and ( max-width: 1023px) {
     .wrapper_grid {
         grid-template-areas: 'video video' 'description sideRight' 'bottom_area bottom_area' ;
-        width: clamp(750px,80%,1024px);
-        margin: 0 auto;
+        width: 100vw ;
         grid-template-columns: 1fr 1fr;
         gap: 1em;
     }
+    /*.video {*/
+    /*    grid-area: video;*/
+    /*    width: 100%;*/
+    /*}*/
 }
-@media (min-width: 639px) and ( max-width: 767px) {
+@media ( max-width: 767px) {
     /*change from this*/
     .wrapper_grid {
-        grid-template-areas: 'video video' 'description sideRight' 'bottom_area bottom_area' ;
-        width: clamp(750px,80%,1024px);
-        margin: 0 auto;
-        grid-template-columns: 3fr 2fr;
+        grid-template-areas: 'video' 'description' 'sideRight' 'bottom_area' ;
+        width: 100vw;
+        grid-template-columns:  1fr;
         gap: 1em;
     }
-}
-@media ( max-width: 638px) {
-    .wrapper_grid {
-        grid-template-areas: 'video video' 'description sideRight' 'bottom_area bottom_area' ;
-        width: clamp(750px,80%,1024px);
-        margin: 0 auto;
-        grid-template-columns: 3fr 2fr;
-        gap: 1em;
-    }
+
 }

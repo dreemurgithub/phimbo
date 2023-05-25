@@ -123,12 +123,12 @@ export default function Movie({movie}: any) {
                 </ul>
                 <p>{movie.overview}</p>
             </div>
-            <div className={Styles.bottom}>
-                <Bottom/>
-            </div>
             <div className={Styles.sideRight}>
                 <SideRight/>
 
+            </div>
+            <div className={Styles.bottom}>
+                <Bottom/>
             </div>
         </div>)
 }

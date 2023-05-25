@@ -63,3 +63,20 @@
         /*width: 80vw;*/
     }
 }
+
+@media (min-width: 639px) and ( max-width: 767px) {
+    .bottom {
+        grid-template-columns: 1fr 1fr 1fr;
+        /*width: 10em;*/
+
+    }
+
+}
+@media ( max-width: 639px) {
+    /*change from this*/
+    .bottom {
+        grid-template-columns: 1fr 1fr;
+        /*width: 10em;*/
+
+    }
+}

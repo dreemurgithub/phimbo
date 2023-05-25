@@ -4,10 +4,15 @@
     top: 0;
     z-index: 100;
     background-color: #5e5656;
-    padding-left: 10vw;
-    margin-left: -10vw;
-    padding-right: 1em;
-    margin-right: -1em;
+    width: 100%;
+    padding: 0;
+    /*padding-left: 30vw;*/
+    /*margin-left: -30vw;*/
+    /*padding-right: 30vw;*/
+    /*margin-right: -30vw;*/
+    margin: 0 -9999rem;
+    /* add back section padding value */
+    padding: .25rem 9999rem;
 }
 .nav_all {
     color: white;
