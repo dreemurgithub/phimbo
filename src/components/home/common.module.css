@@ -6,7 +6,6 @@
     /*gap: 1em;*/
     cursor: pointer;
     margin-top: 8em;
-    grid-template-columns: repeat(auto-fill,1fr)!important;
 }
 .container_card_pic > div, .container_card_list>div , .container_card_anime_trailer>div {
     margin-top: -7em;
@@ -31,9 +30,6 @@
 }
 /* container card pic on update+recommend - end   */
 
-
-
-
 .information_poster {
     position: relative;
     top: -5.5em;
@@ -49,7 +45,6 @@
     position: relative;
     top: 1em;
     background-color: red;
-
     /*the FHD, what ever*/
 }
 .information_poster > div {
@@ -67,8 +62,6 @@
 @media (min-width: 800px) {
     .container_card_pic {
         grid-template-columns: 1fr 1fr 1fr 1fr;
-        /*width: clamp(640px,100%,1024px);*/
-
     }
     .container_card_pic >div:first-child {
         grid-row-start: 1;
@@ -88,7 +81,6 @@
 @media (max-width: 799px) and (min-width: 768px ){
     .container_card_pic {
         grid-template-columns: 1fr 1fr 1fr;
-        /*width: 100vw;*/
     }
     .container_card_pic >div:first-child {
         grid-row-start: 1;
@@ -104,7 +96,6 @@
 @media (max-width: 767px) and (min-width: 640px ){
     .container_card_pic {
         grid-template-columns: 1fr 1fr 1fr;
-        /*width: 100vw;*/
     }
     .container_card_pic > div:first-child  {
         grid-row-start: 1;
@@ -116,7 +107,6 @@
 @media (max-width: 639px){
     .container_card_pic {
         grid-template-columns: 1fr 1fr;
-        /*width: 100vw;*/
     }
 }
 
@@ -132,7 +122,6 @@
     margin-top: -7em;
 }
 .container_card_anime_trailer > div > img {
-    /*width: 100%;*/
     height: 10em;
     z-index: 3;
 }
@@ -153,8 +142,6 @@
 @media (min-width: 800px) {
     .container_card_anime_trailer {
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-        /*width: 80vw;*/
-
     }
     .container_card_anime_trailer >div:first-child {
         grid-row-start: 1;
@@ -171,7 +158,6 @@
 @media (max-width: 799px) and (min-width: 768px ){
     .container_card_anime_trailer {
         grid-template-columns: 1fr 1fr 1fr 1fr;
-        /*width: 100vw;*/
     }
     .container_card_anime_trailer >div:first-child {
         grid-row-start: 1;
@@ -187,7 +173,6 @@
 @media (max-width: 767px) and (min-width: 640px ){
     .container_card_anime_trailer {
         grid-template-columns: 1fr 1fr 1fr ;
-        /*width: 100vw;*/
     }
     .container_card_anime_trailer > div:first-child  {
         grid-row-start: 1;
@@ -208,7 +193,6 @@
 @media (max-width: 639px){
     .container_card_anime_trailer {
         grid-template-columns: 1fr 1fr;
-        /*width: 100vw;*/
     }
 }
 
@@ -222,57 +206,27 @@
 @media (min-width: 800px) {
     .container_card_list {
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-        /*width: 80vw;*/
-        /*background-color: aqua;*/
     }
-    /*.container_card_list >div:first-child {*/
-    /*    grid-row-start: 1;*/
-    /*    grid-row-end: 3;*/
-    /*    grid-column-start: 1;*/
-    /*    grid-column-end: 3;*/
-    /*}*/
     .container_card_list > div  > img{
         height: 20em;
     }
-
-
 }
 @media (max-width: 799px) and (min-width: 768px ){
     .container_card_list {
         grid-template-columns: 1fr 1fr 1fr 1fr;
         /*width: 100vw;*/
     }
-    .container_card_list >div:first-child {
-        grid-row-start: 1;
-        grid-row-end: 3;
-        grid-column-start: 1;
-        grid-column-end: 3;
+    .container_card_list >div:nth-child(9) ,.container_card_list >div:nth-child(10) {
+        display: none;
     }
-    .container_card_list > div:first-child  > img{
-        height: 20em;
-    }
-
 }
 @media (max-width: 767px) and (min-width: 640px ){
     .container_card_list {
         grid-template-columns: 1fr 1fr 1fr ;
-        /*width: 100vw;*/
     }
-    .container_card_list > div:first-child  {
-        grid-row-start: 1;
-        grid-row-end: 3;
-        grid-column-start: 1;
-        grid-column-end: 3;
+    .container_card_list > div:last-child  {
+        display: none;
     }
-    .container_card_list > div:nth-child(4) {
-        grid-row-start: 3;
-        grid-row-end: 5;
-        grid-column-start: 1;
-        grid-column-end: 3;
-    }
-    /*.container_card_list > div:first-child  > img,.container_card_list > div:nth-child(4)>img{*/
-    /*    height: 20em;*/
-    /*}*/
 }
 @media (max-width: 639px){
     .container_card_list {

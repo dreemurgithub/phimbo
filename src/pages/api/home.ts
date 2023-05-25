@@ -7,12 +7,12 @@ export default async function handler( req: NextApiRequest,res: NextApiResponse)
         update :  list(10,11,data_string),
         anime :   list(21,7,data_string) ,
         single :   list(29,10,data_string) ,
-        new_series :   list(39,9,data_string) ,
-        new_single :   list(44,9,data_string) ,
+        new_series :   list(39,10,data_string) ,
+        new_single :   list(44,10,data_string) ,
         chart :   list(49,8,data_string) ,
         trailer : list(54,7,data_string) ,
-        soon_release : list(61,5,data_string) ,
-        today : list(66,9,data_string) ,
+        soon_release : list(61,10,data_string) ,
+        today : list(66,10,data_string) ,
     })
 }
 

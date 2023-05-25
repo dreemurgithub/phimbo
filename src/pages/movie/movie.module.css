@@ -44,7 +44,7 @@
     /*    width: 100%;*/
     /*}*/
 }
-@media (max-width: 899px) {
+@media (max-width: 799px) {
     /*change from this*/
     .wrapper_grid {
         grid-template-areas: 'video' 'description' 'sideRight' 'bottom_area' ;
