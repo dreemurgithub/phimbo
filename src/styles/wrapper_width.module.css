@@ -1,0 +1,26 @@
+.wrapper {
+    margin: 0 auto;
+    padding-top: 8em;
+}
+@media (min-width: 1024px) {
+    .wrapper {
+        width: 1024px;
+    }
+}
+
+@media (max-width: 1023px) and (min-width: 800px) {
+    .wrapper {
+        width: 800px;
+    }
+}
+@media (max-width: 799px) and (min-width: 640px) {
+    .wrapper {
+        width: 640px;
+    }
+}
+
+@media (max-width: 639px) and (min-width: 480px) {
+    .wrapper {
+        width: 480px;
+    }
+}

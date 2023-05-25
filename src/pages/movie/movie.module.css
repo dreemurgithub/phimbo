@@ -1,6 +1,7 @@
 .wrapper_grid {
     display: grid;
     margin: 0 auto;
+    overflow-y: hidden;
 }
 
 .video {
@@ -25,16 +26,16 @@
 @media (min-width: 1024px) {
     .wrapper_grid {
         grid-template-areas: 'video sideRight' 'description sideRight' 'bottom_area bottom_area' ;
-        width: clamp(750px,80%,1024px);
+        /*width: clamp(750px,80%,1024px);*/
         grid-template-columns: 3fr 2fr;
         gap: 1em;
     }
 }
 
-@media (min-width: 768px) and ( max-width: 1023px) {
+@media (max-width: 1024px) and (min-width: 800px) {
     .wrapper_grid {
         grid-template-areas: 'video video' 'description sideRight' 'bottom_area bottom_area' ;
-        width: 100vw ;
+        /*width: 100vw ;*/
         grid-template-columns: 1fr 1fr;
         gap: 1em;
     }
@@ -43,11 +44,11 @@
     /*    width: 100%;*/
     /*}*/
 }
-@media ( max-width: 767px) {
+@media (max-width: 899px) {
     /*change from this*/
     .wrapper_grid {
         grid-template-areas: 'video' 'description' 'sideRight' 'bottom_area' ;
-        width: 100vw;
+        /*width: 100vw;*/
         grid-template-columns:  1fr;
         gap: 1em;
     }

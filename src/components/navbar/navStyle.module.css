@@ -1,7 +1,8 @@
 .nav_wrapper {
     /*use this to make long background padding color*/
-    position: sticky;
+    position: fixed;
     top: 0;
+    /*left: 15%;*/
     z-index: 100;
     background-color: #5e5656;
     width: 100%;

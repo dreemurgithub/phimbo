@@ -19,7 +19,7 @@ export default function Home() {
   },[])
   return <>
     {/*<p>{JSON.stringify(data_list)}</p>*/}
-    <div style={{margin:'0 auto'}}>
+    <div>
       <Recommend/>
       <Update/>
       <Anime/>

@@ -78,7 +78,7 @@ export default function Category({genre}: { genre: { id: number, name: string } 
                 {(function () {
                     const list = []
                     for (let i = 0; i < PageNumber; i++) list.push(i)
-                    if (PageNumber < 19) return <div>
+                    if (PageNumber < 17) return <div>
                         <button style={{backgroundColor: '#005b96'}}
                                 onClick={() => change_list_category(movie_inpage - 1)}>
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
