@@ -1,7 +1,7 @@
 
 @media (min-width: 1024px) {
     .dropdown {
-        background-color: #536872;
+        background-color: black;
         width: 33em;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
@@ -26,6 +26,9 @@
         position: relative;
         left : -2.5em;
         gap: 0.3em;
+        box-shadow: #999;
+        background-color: rgba(0,0,0,.8);
+
         /*overflow-y: auto;*/
         /*margin: 0 auto;*/
 

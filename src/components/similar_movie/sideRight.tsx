@@ -26,9 +26,10 @@ export default function SideRight() {
                 <Link href={`/movie/${el.id}`} target={'_blank'}><img src={URL_image(el.img)} alt="" className={Styles.img}/></Link>
                 <Link href={`/movie/${el.id}`} target={'_blank'}>
                     <div>
-                        <h4>{el.title}</h4>
-                        <p>120 Phút</p>
-                        <p>20.5k Lượt xem</p>
+                        <p style={{color:'#0285b5'}}><b>{el.title}</b></p>
+                        <small>120 Phút</small>
+                        <br/>
+                        <small>20.5k Lượt xem</small>
                     </div>
                 </Link>
                 </div>

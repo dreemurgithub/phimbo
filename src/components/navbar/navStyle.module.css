@@ -4,7 +4,7 @@
     top: 0;
     /*left: 15%;*/
     z-index: 100;
-    background-color: #5e5656;
+    background-color: #333;
     width: 100%;
     padding: 0;
     /*padding-left: 30vw;*/
@@ -30,10 +30,7 @@
     padding-left: 2em;
     background-color: #5e5656;
 }
-.nav_item {
-    position: relative;
-    top: -2.5px;
-}
+
 
 .nav_item:hover {
     cursor: pointer;
@@ -65,19 +62,19 @@
 }
 
 .nav_search {
-    margin-top: 1em;
+    margin-top: 0.5em;
     display: grid;
     grid-template-columns: 10px 1fr 20px;
     border: 1px solid black;
     border-radius: 1em;
-    background-color: #3c2f2f;
+    background-color: #333;
 
 }
 
 .nav_search > input {
     border: none;
-    background-color: #3c2f2f;
-    padding: 0.2em;
+    background-color: #333;
+    padding: 0.5em;
 }
 .nav_search > input:focus {
     outline-width: 0;
@@ -108,6 +105,9 @@
 
 
 @media (min-width: 1024px){
+    .nav_item >div>span >svg {
+        display: none;
+    }
     .nav_icon {
         margin-left: 2em;
     }
@@ -170,6 +170,19 @@
         padding: 0;
 
     }
+    .nav_item > div:first-child {
+        display: flex;
+        gap: 3em;
+    }
+
+    .nav_item   {
+        display: grid;
+        grid-template-rows: 2fr;
+        gap: 1em;
+    }
+    .nav_item >div > a {
+        color: #0285b5;
+    }
     .nav_icon > img {
         width: 100px;
         /*on >1024 screen will go to middle*/
@@ -181,10 +194,12 @@
         padding-top: 5em;
         left: 0.1em;
         width: 22em;
-        background-color: #3c2f2f;
+        background-color: rgba(0,0,0,.8);
         opacity: 90%;
         z-index: 100;
-
+        overflow-y: scroll;
+        overflow-x: hidden;
+        color: #0285b5;
         /*display: grid;*/
     /*    in state, grid/none */
     }
@@ -205,9 +220,10 @@
     }
     .side_list {
         order: 2;
-        height: 80vh;
+        height: 70vh;
         overflow-y: scroll;
         overflow-x: hidden;
+        padding-bottom: 10vh;
     /*    for scrolling mobile/tablet sidebar*/
     }
     .side_search {
@@ -223,5 +239,6 @@
         left: 22em;
         z-index: 100;
         order: 3;
+    /*    click out to close*/
     }
 }

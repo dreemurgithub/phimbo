@@ -7,6 +7,11 @@
 .card {
 
 }
+.card > a >div {
+    position: relative;
+    top: -1em;
+
+}
 
 @media (min-width: 768px) {
     .sideRight {
@@ -18,7 +23,9 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 0.2em;
+        padding: 0;
     }
+
 }
 
 @media (min-width: 639px) and ( max-width: 767px) {
