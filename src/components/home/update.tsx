@@ -10,7 +10,6 @@ export default function Update(){
             .then(data=>setdata_list(data.update))
     },[])
     return <>
-        <h3 style={{textAlign:'center'}}>Mới cập nhật</h3>
         <div className={Styles.container_card_pic}>
             {data_list.map((el: any) => <div key={el.id}>
                 <span>Vietsub</span>

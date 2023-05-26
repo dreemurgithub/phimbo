@@ -15,7 +15,6 @@ export default function New_single(){
         })
     },[])
     if(bigscreen) return <>
-        <h3 style={{textAlign:'center'}}>Phim lẻ mới</h3>
         <div className={Styles.container_card_list}>
             {data_list.map((el: any) => <div key={el.id}>
                 <span>Vietsub</span>

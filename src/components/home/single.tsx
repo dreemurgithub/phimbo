@@ -10,7 +10,6 @@ export default function Single(){
             .then(data=>setdata_list(data.single))
     },[])
     return <>
-        <h3 style={{textAlign:'center'}}>Phim lẻ</h3>
         <div className={Styles.container_card_list}>
             {data_list.map((el: any) => <div key={el.id}>
                 <span>Vietsub</span>

@@ -4,6 +4,7 @@ html, body {
     overflow-x: hidden;
     /*overflow-y: hidden;*/
     box-sizing: border-box;
+    color: white;
 }
 html {
     -webkit-tap-highlight-color:rgba(0,0,0,0) ;

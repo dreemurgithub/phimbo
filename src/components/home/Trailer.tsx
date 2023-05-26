@@ -15,7 +15,6 @@ export default function Trailer(){
         })
     },[])
     if(bigscreen) return <>
-        <h3 style={{textAlign:'center'}}>Trailer</h3>
         <div className={Styles.container_card_anime_trailer}>
             {data_list.map((el: any) => <div key={el.id}>
                 <span>Vietsub</span>

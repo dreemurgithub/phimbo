@@ -11,7 +11,6 @@ export default function Recommend() {
             .then(data=>setdata_list(data.recommend))
     },[])
     return <>
-        <h3 style={{textAlign:'center'}}>Phim đề cử</h3>
         <div className={Styles.container_card_pic}>
             {data_list.map((el: any) => <div key={el.id}>
                 <span>Vietsub</span>

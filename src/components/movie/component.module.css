@@ -1,0 +1,32 @@
+.component_button {
+    display: flex;
+    gap: 0.5em;
+}
+.component_button > button {
+    display: flex;
+    gap: 0.1em;
+}
+
+
+@media (min-width: 1024px) {
+    .component_button > button {
+        background-color: #06a2d4;
+        color: white;
+        /*padding: 0.3em;*/
+        cursor: pointer;
+        height: 1.7em;
+    }
+}
+@media (max-width: 1023px) {
+    .component_button > button {
+        background-color: transparent;
+        border: none;
+        color: #06a2d4;
+        /*padding: 0.3em;*/
+        cursor: pointer;
+        height: 2em;
+    }
+    .component_button > button >*:nth-child(2) {
+        display: none;
+    }
+}

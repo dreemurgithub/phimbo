@@ -15,7 +15,6 @@ export default function Chart(){
         })
     },[])
     if(bigscreen) return <>
-        <h3 style={{textAlign:'center'}}>Bảng xếp hạng</h3>
         <div className={Styles.container_card_list}>
             {data_list.map((el: any , index: number) => <div key={el.id}>
                 <span>Hạng {index+1}</span>
