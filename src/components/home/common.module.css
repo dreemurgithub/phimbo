@@ -59,6 +59,7 @@
     padding: 0.2em;
     overflow: hidden;
 }
+
 @media (min-width: 800px) {
     .container_card_pic {
         grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -139,6 +140,7 @@
     /*    the vietsub span*/
 }
 
+
 @media (min-width: 800px) {
     .container_card_anime_trailer {
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -203,9 +205,18 @@
 
 /* container anime on soon + today + new single + new series  - start   */
 
-@media (min-width: 800px) {
+@media (min-width: 1024px) {
     .container_card_list {
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+
+}
+@media (min-width: 800px)and (max-width: 1024px) {
+    .container_card_list {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    .container_card_list >div:nth-child(10),.container_card_list >div:nth-child(9) {
+        display: none;
     }
     .container_card_list > div  > img{
         height: 20em;
@@ -227,6 +238,7 @@
     .container_card_list > div:last-child  {
         display: none;
     }
+
 }
 @media (max-width: 639px){
     .container_card_list {

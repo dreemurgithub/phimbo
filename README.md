@@ -22,17 +22,16 @@ The `pages/api` directory is mapped to `/api/*`. Files in this directory are tre
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
+## Một số vấn đề
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+ - Sử dụng event listener cho thay đổi size của trình duyệt sẽ khiến hiển thị 1 số component sai
+   - Tuy nhiên nên chỉ sử dụng 1 kích cỡ duy nhất màn hình duy nhất(tức là không dùng dev tool) thì sẽ không bị gì cả
+   - Vấn đề này cũng xảy ra ở trang web gốc của phimbo1080.in nhưng ít hơn
+   - Nếu xảy ra lỗi hiển thị, chỉ cần reload trang
+ - Số lượng view là ngẫu nhiên/ghi tay vào, do fake data không có thông tin về thời gian phim
+ - Category pagination của phimbo hơi xấu và không đồng đều trên các màn hình,
+   - Đã edit khác bằng cách thay đổi state dựa theo số page hiện tại
+   - Sẽ luôn luôn có đúng 20 nút, trừ khi số lượng phim ít hơn
+   - Tuy nhiên category page mới tải toàn bộ data phim về rồi hiển thị state qua pagination, nên mới có thể tại ra pagination mượt mà.
+ - phimbo cố tình lock dev tool, chỉ có thể xem css, xem trang thái đóng mở của navbar, scrolling trên các màn hình nhỏ... khó.
+ - Trang homepage của phimbo ẩn đi một số card, tốn khá nhiều thời gian để đoán chính xác là ẩn card nào và hiển thị ra sao, có khả năng bị sai vài đoạn

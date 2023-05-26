@@ -17,3 +17,27 @@ a {
 img {
     object-fit: fill ;
 }
+.footer_home{
+    display: grid;
+}
+.footer_home > div > a > img {
+    width: 100%;
+}
+
+
+@media (min-width: 799px) {
+    .footer_home {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+@media (max-width: 799px) and (min-width: 640px) {
+    .footer_home {
+        grid-template-columns: 1fr 1fr ;
+    }
+}
+
+@media (max-width: 639px) {
+    .footer_home {
+        grid-template-columns: 1fr 1fr ;
+    }
+}

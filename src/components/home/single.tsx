@@ -10,7 +10,7 @@ export default function Single(){
             .then(data=>setdata_list(data.single))
     },[])
     return <>
-        <div className={Styles.container_card_list}>
+        <div className={Styles.container_card_list} style={{paddingLeft :'999em',paddingRight:'999em',backgroundImage:'url("https://www.publicdomainpictures.net/pictures/260000/velka/red-and-black-background.jpg")',backgroundRepeat:'repeat',marginLeft:'-999em',marginRight:'-999em',paddingTop:'10em',marginTop:'-6em' }}>
             {data_list.map((el: any) => <div key={el.id}>
                 <span>Vietsub</span>
                 <img src={URL_image(el.poster_path)} alt="" onClick={() => window.location.href = `/movie/${el.id}`}/>
